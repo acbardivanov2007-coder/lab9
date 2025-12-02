@@ -1,25 +1,23 @@
 #ifndef MATRIXFUNC_H
 #define MATRIXFUNC_H
 
-// Константы для размеров матрицы
-#define COL 10  // количество столбцов
-#define ROW 10  // Количество строк
+#define COL 10
+#define ROW 10
 
-// Прототипы функций
+// Функция 1: Постолбцовый ввод снизу-вверх из stdin
+int vvod_snizu_vverh_stdin(int matrica[ROW][COL]);
 
-// Инициализация матрицы нулями
-void matrix(int matritsa[ROW][COL]);
+// Функция представления массива (матрица значений)
+void vivod(int matrica[ROW][COL]);
 
-// a. Постолбцовый ввод снизу-вверх из файла
-void snizuverh(int matritsa[ROW][COL], const char* file);
+// Функция 2: Определение индексов максимального и минимального элементов
+void find_min_max(int matrica[ROW][COL], int* min_row, int* min_col, 
+                  int* max_row, int* max_col);
 
-// b. Вывод матрицы с индексами
-void indeks(int matritsa[ROW][COL]);
+// Функция 3: Сумма всех значений выше главной диагонали (включительно)
+int sum_diagonal(int matrica[ROW][COL]);
 
-// c. Поиск индексов минимального и максимального элементов
-void naytiindeks(int matritsa[ROW][COL], int* rowMin, int* colMin, int* rowMax, int* colMax);
+// Вспомогательная функция для вывода меню
+void print_menu();
 
-// d. Сумма элементов выше главной диагонали (включительно)
-int summa(int matritsa[ROW][COL]);
-
-#endif 
+#endif
