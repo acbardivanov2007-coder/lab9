@@ -45,7 +45,7 @@ int main() {
                     int rowMin, colMin, rowMax, colMax;
                     
                     // Поиск индексов минимального и максимального элементов
-                    naytiIndeksyMinMax(matritsa, &rowMin, &colMin, &rowMax, &colMax);
+                    naytindeks(matritsa, &rowMin, &colMin, &rowMax, &colMax);
                     
                     // Вывод результатов
                     printf("минимальный элемент: матрица[%d][%d] = %d\n", rowMin, colMin, matritsa[rowMin][colMin]);
