@@ -2,77 +2,60 @@
 #include "matrixfunc.h"
 
 int main() {
-    // Объявление матрицы 10x10
-    int matritsa[ROW][COL];
-    char vybor;               // Переменная для выбора пункта меню
-    char file[100];      // Имя файла для ввода данных
+    int matrica[ROW][COL] = {{0}};  // Инициализация нулями
+    char choice;
+    int cou, sum;
+    int min_row, min_col, max_row, max_col;
     
-    // Инициализация матрицы нулями
-    matrix(matritsa);
+    // Автоматически читаем матрицу из stdin при запуске
+    printf("=== Чтение матрицы из стандартного ввода ===\n");
+    cou = vvod_snizu_vverh_stdin(matrica);
     
-    // Основной цикл программы с меню
+    if (cou != ROW * COL) {
+        printf("Ошибка: не удалось считать полную матрицу. Требуется %d элементов, считано %d\n", 
+               ROW * COL, cou);
+        return 1;
+    }
+    
     do {
-        // Вывод меню
-        printf("a. постолбцовый ввод снизу вверх (из файла)\n");
-        printf("b. предствление массива (матрица значений)\n");
-        printf("c. индексы максимального и минимального значений\n");
-        printf("d. сумма значений выше главной диагонали (включительно)\n");
-        printf("e. выход\n");
-        printf("выберите опцию: ");
-        // Чтение выбора пользователя
-        if((scanf(" %c", &vybor))!=1){   // защита от ctrl+d
-            printf("программа завершается.\n");
-            break;
-        }
-        clear(); // очистка буфера 
-        // Обработка выбора пользователя
-        switch(vybor) {
+        print_menu();
+        scanf(" %c", &choice);
+        
+        switch(choice) {
             case 'a':
-                // Ввод матрицы из файла
-                printf("введите имя файла: ");
-                scanf("%s", file);
-                snizuverh(matritsa, file);
-                printf("матрица загружена из файла %s\n", file);
+                printf("Матрица уже была считана при запуске программы.\n");
+                printf("Если хотите ввести новую, перезапустите программу.\n");
                 break;
                 
             case 'b':
-                // Вывод матрицы с индексами
-                printf("\nматрица %dx%d:\n", ROW, COL);
-                indeks(matritsa);
+                vivod(matrica);
                 break;
                 
             case 'c':
-                {
-                    // Объявление переменных для индексов минимального и максимального элементов
-                    int rowMin, colMin, rowMax, colMax;
-                    
-                    // Поиск индексов минимального и максимального элементов
-                    naytindeks(matritsa, &rowMin, &colMin, &rowMax, &colMax);
-                    
-                    // Вывод результатов
-                    printf("минимальный элемент: матрица[%d][%d] = %d\n", rowMin, colMin, matritsa[rowMin][colMin]);
-                    printf("максимальный элемент: матрица[%d][%d] = %d\n", rowMax, colMax, matritsa[rowMax][colMax]);
-                }
+                find_min_max(matrica, &min_row, &min_col, &max_row, &max_col);
                 break;
                 
             case 'd':
-                {
-                    // Вычисление суммы элементов выше главной диагонали
-                    int summa_rezult = summa(matritsa);
-                    printf("сумма элементов выше главной диагонали (включительно): %d\n", summa_rezult);
-                }
+                sum = sum_diagonal(matrica);
+                printf("Сумма всех значений выше главной диагонали (включительно): %d\n", sum);
                 break;
                 
             case 'e':
-                // Выход из программы
-                printf("выход из программы.\n");
+                printf("Выход из программы.\n");
                 break;
                 
             default:
-                // Обработка неверного выбора
-                printf("неверный выбор, попробуйте снова.\n");
+                printf("Неверный выбор. Попробуйте снова.\n");
+                break;
         }
-    } while(vybor != 'e');  // Продолжаем цикл, пока пользователь не выберет выход
+        
+        if (choice != 'e') {
+            printf("\nНажмите Enter для продолжения...");
+            getchar(); // Очистка буфера от '\n'
+            getchar(); // Ожидание нажатия Enter
+        }
+        
+    } while (choice != 'e');
     
-    return 0;  // Успешное завершение программы
+    return 0;
 }
