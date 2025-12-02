@@ -56,8 +56,8 @@ int main() {
             case 'd':
                 {
                     // Вычисление суммы элементов выше главной диагонали
-                    int summa = summa(matritsa);
-                    printf("сумма элементов выше главной диагонали (включительно): %d\n", summa);
+                    int summa_rezult = summa(matritsa);
+                    printf("сумма элементов выше главной диагонали (включительно): %d\n", summa_rezult);
                 }
                 break;
                 
