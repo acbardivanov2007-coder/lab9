@@ -20,7 +20,7 @@ void snizuverh(int matritsa[ROW][COL], const char* file) {
     // Открываем файл для чтения
     FILE *fail = fopen(file, "r");
     if (!fail) {
-        printf("Oshibka otkrytiya faila %s\n", file);
+        printf("ошибка открытия файла %s\n", file);
         return;
     }
     
