@@ -3,7 +3,7 @@
 
 int main() {
     int matrica[ROW][COL] = {{0}};  // Инициализация нулями
-    char choice;
+    char vibor;
     int cou, sum;
     int min_row, min_col, max_row, max_col;
     
@@ -19,9 +19,12 @@ int main() {
     
     do {
         print_menu();
-        scanf(" %c", &choice);
-        
-        switch(choice) {
+        if ((scanf(" %c", &vibor))!=1){ // для проверки ctrl+d
+            printf("Ошибка, программа завершается...\n");
+            break;
+        }
+        clear();
+        switch(vibor) {
             case 'a':
                 printf("Матрица уже была считана при запуске программы.\n");
                 printf("Если хотите ввести новую, перезапустите программу.\n");
@@ -49,13 +52,13 @@ int main() {
                 break;
         }
         
-        if (choice != 'e') {
+        if (vibor != 'e') {
             printf("\nНажмите Enter для продолжения...");
             getchar(); // Очистка буфера от '\n'
             getchar(); // Ожидание нажатия Enter
         }
         
-    } while (choice != 'e');
+    } while (vibor != 'e');
     
     return 0;
 }
