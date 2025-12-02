@@ -13,13 +13,12 @@ int main() {
     // Основной цикл программы с меню
     do {
         // Вывод меню
-        printf("\n=== MENU ===\n");
-        printf("a. Postolbtsovyy vvod snizu-vverh (iz faila)\n");
-        printf("b. Predstavlenie massiva (matritsa znacheniy)\n");
-        printf("c. Indeksy maksimalnogo i minimalnogo znacheniy\n");
-        printf("d. Summa znacheniy vyshe glavnoy diagonali (vklyuchitelno)\n");
-        printf("e. Vykhod\n");
-        printf("Vyberite opciyu: ");
+        printf("a. постолбцовый ввод снизу вверх (из файла)\n");
+        printf("b. предствление массива (матрица значений)\n");
+        printf("c. индексы максимального и минимального значений\n");
+        printf("d. сумма значений выше главной диагонали (включительно)\n");
+        printf("e. выход\n");
+        printf("выберите опцию: ");
         
         // Чтение выбора пользователя
         scanf(" %c", &vybor);
@@ -28,15 +27,15 @@ int main() {
         switch(vybor) {
             case 'a':
                 // Ввод матрицы из файла
-                printf("Vvedite imya faila: ");
+                printf("введите имя файла: ");
                 scanf("%s", file);
                 snizuverh(matritsa, file);
-                printf("Matritsa zagruzhena iz faila %s\n", file);
+                printf("матрица загружена из файла %s\n", file);
                 break;
                 
             case 'b':
                 // Вывод матрицы с индексами
-                printf("\nMatritsa %dx%d:\n", ROW, COL);
+                printf("\nматрица %dx%d:\n", ROW, COL);
                 indeks(matritsa);
                 break;
                 
@@ -49,8 +48,8 @@ int main() {
                     naytiIndeksyMinMax(matritsa, &rowMin, &colMin, &rowMax, &colMax);
                     
                     // Вывод результатов
-                    printf("Minimalnyy element: matritsa[%d][%d] = %d\n", rowMin, colMin, matritsa[rowMin][colMin]);
-                    printf("Maksimalnyy element: matritsa[%d][%d] = %d\n", rowMax, colMax, matritsa[rowMax][colMax]);
+                    printf("минимальный элемент: матрица[%d][%d] = %d\n", rowMin, colMin, matritsa[rowMin][colMin]);
+                    printf("максимальный элемент: матрица[%d][%d] = %d\n", rowMax, colMax, matritsa[rowMax][colMax]);
                 }
                 break;
                 
@@ -58,18 +57,18 @@ int main() {
                 {
                     // Вычисление суммы элементов выше главной диагонали
                     int summa = summa(matritsa);
-                    printf("Summa elementov vyshe glavnoy diagonali (vklyuchitelno): %d\n", summa);
+                    printf("сумма элементов выше главной диагонали (включительно): %d\n", summa);
                 }
                 break;
                 
             case 'e':
                 // Выход из программы
-                printf("Vykhod iz programmy.\n");
+                printf("выход из программы.\n");
                 break;
                 
             default:
                 // Обработка неверного выбора
-                printf("Nevernyy vybor. Poprobuyte snova.\n");
+                printf("неверный выбор, попробуйте снова.\n");
         }
     } while(vybor != 'e');  // Продолжаем цикл, пока пользователь не выберет выход
     
