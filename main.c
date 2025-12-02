@@ -8,7 +8,7 @@ int main() {
     int min_row, min_col, max_row, max_col;
     
     // Автоматически читаем матрицу из stdin при запуске
-    printf("=== Чтение матрицы из стандартного ввода ===\n");
+    printf("Чтение матрицы из стандартного ввода\n");
     cou = vvod_snizu_vverh_stdin(matrica);
     
     if (cou != ROW * COL) {
