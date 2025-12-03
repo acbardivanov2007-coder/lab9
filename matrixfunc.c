@@ -2,7 +2,6 @@
 #include "matrixfunc.h"
 
 int vvod_snizu_vverh_stdin(int matrica[ROW][COL]) {
-    printf("Введите матрицу %dx%d (постолбцово снизу-вверх):\n", ROW, COL);
     
     int cou = 0;
     
@@ -20,7 +19,7 @@ int vvod_snizu_vverh_stdin(int matrica[ROW][COL]) {
         }
     }
     
-    printf("Матрица считана из стандартного ввода, считано всего %d элементов\n", cou);
+    printf("Матрица считана, считано всего %d элементов\n", cou);
     return cou;
 }
 
@@ -70,9 +69,9 @@ void find_min_max(int matrica[ROW][COL], int* min_row, int* min_col,
         }
     }
     
-    printf("Минимальный элемент: matrica[%d][%d] = %d\n", 
+    printf("Минимальный элемент: матрица[%d][%d] = %d\n", 
            *min_row, *min_col, min_val);
-    printf("Максимальный элемент: matrica[%d][%d] = %d\n", 
+    printf("Максимальный элемент: матрица[%d][%d] = %d\n", 
            *max_row, *max_col, max_val);
 }
 
