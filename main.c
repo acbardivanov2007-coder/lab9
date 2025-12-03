@@ -8,7 +8,7 @@ int main() {
     int min_row, min_col, max_row, max_col;
     
     // Автоматически читаем матрицу из stdin при запуске
-    printf("Чтение матрицы из стандартного ввода\n");
+    printf("Чтение матрицы \n");
     cou = vvod_snizu_vverh_stdin(matrica);
     
     if (cou != ROW * COL) {
@@ -23,7 +23,7 @@ int main() {
             printf("Ошибка, программа завершается...\n");
             break;
         }
-        clear();
+        clear(); //очистка буфера 
         switch(vibor) {
             case 'a':
                 printf("Матрица уже была считана при запуске программы.\n");
@@ -55,7 +55,6 @@ int main() {
         if (vibor != 'e') {
             printf("\nНажмите Enter для продолжения...");
             getchar(); // Очистка буфера от '\n'
-            getchar(); // Ожидание нажатия Enter
         }
         
     } while (vibor != 'e');
