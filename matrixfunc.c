@@ -13,7 +13,7 @@ int vvod_snizu_vverh(int matrica[ROW][COL]) {
         for (int x = ROW - 1; x >= 0; x--) {
             if (scanf("%d", col_ptr + x * COL) != 1) {
                 printf("Не получается прочитать данные. Прочитано %d элементов.\n", cou);
-                return cou;
+                return cou;  // Возвращаем количество прочитанных элементов
             }
             cou++;
         }
