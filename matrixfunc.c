@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include "matrixfunc.h"
 
-int vvod_snizu_vverh_stdin(int matrica[ROW][COL]) {
+int vvod_snizu_vverh(int matrica[ROW][COL]) {
     
     int cou = 0;
     
-    // Постолбцовый ввод снизу-вверх из stdin
+    // Постолбцовый ввод снизу-вверх 
     for (int y = 0; y < COL; y++) {
         int *col_ptr = *matrica + y;  // Указатель на первый элемент столбца y
         
@@ -92,6 +92,7 @@ int sum_diagonal(int matrica[ROW][COL]) {
 }
 
 void print_menu() {
+    printf("Меню:\n");
     printf("a. Функция 1 (Постолбцовый ввод снизу-вверх)\n");
     printf("b. Представление массива (матрица значений)\n");
     printf("c. Функция 2 (Найти мин и макс элементы)\n");
