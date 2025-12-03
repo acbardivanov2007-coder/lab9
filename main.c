@@ -7,9 +7,9 @@ int main() {
     int cou, sum;
     int min_row, min_col, max_row, max_col;
     
-    // Автоматически читаем матрицу из stdin при запуске
+    // Автоматически читаем матрицу при запуске
     printf("Чтение матрицы \n");
-    cou = vvod_snizu_vverh_stdin(matrica);
+    cou = vvod_snizu_vverh(matrica);
     
     if (cou != ROW * COL) {
         printf("Ошибка: не удалось считать полную матрицу. Требуется %d элементов, считано %d\n", 
