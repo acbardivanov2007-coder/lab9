@@ -12,8 +12,7 @@ int main() {
     cou = vvod_snizu_vverh(matrica);
     
     if (cou != ROW * COL) {
-        printf("Ошибка: не удалось считать полную матрицу. Требуется %d элементов, считано %d\n", 
-               ROW * COL, cou);
+        printf("Ошибка: не удалось считать полную матрицу. Требуется %d элементов, считано %d\n", ROW * COL, cou);
         return 1;
     }
     
