@@ -5,7 +5,7 @@
 #define ROW 10
 
 // Функция 1: Постолбцовый ввод снизу-вверх из stdin
-int vvod_snizu_vverh_stdin(int matrica[ROW][COL]);
+int vvod_snizu_vverh(int matrica[ROW][COL]);
 
 // Функция представления массива (матрица значений)
 void vivod(int matrica[ROW][COL]);
